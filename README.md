@@ -1,4 +1,4 @@
-# Task Manager
+# Task Manager - LimeTray Assingment Submission
 
 A modern, responsive task management application built with React and TypeScript. Features a beautiful UI with smooth animations, drag-and-drop functionality, and theme switching capabilities.
 
@@ -23,7 +23,7 @@ A modern, responsive task management application built with React and TypeScript
   - Smooth theme transitions
   - System-wide color variables
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stacks
 
 - **Frontend Framework**: React 18
 - **Language**: TypeScript
@@ -92,5 +92,3 @@ The project is configured to work with Vercel's default build settings:
 - Build Command: `npm run build`
 - Output Directory: `build`
 - Install Command: `npm install`
-
-Made with ❤️ by Abhishek
