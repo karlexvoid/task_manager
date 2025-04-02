@@ -168,18 +168,17 @@ const TaskList: React.FC = () => {
   const [exitingTasks, setExitingTasks] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    const newTasks = filteredTasks.filter(task => !enteringTasks.has(task.id));
-    if (newTasks.length > 0) {
-      newTasks.forEach(task => {
-        setEnteringTasks(prev => new Set(prev).add(task.id));
-        setTimeout(() => {
-          setEnteringTasks(prev => {
-            const next = new Set(prev);
-            next.delete(task.id);
-            return next;
-          });
-        }, 300);
-      });
+    if (filteredTasks.length > 0) {
+      const newTask = filteredTasks[filteredTasks.length - 1];
+      setEnteringTasks(prev => new Set(prev).add(newTask.id));
+      const timer = setTimeout(() => {
+        setEnteringTasks(prev => {
+          const next = new Set(prev);
+          next.delete(newTask.id);
+          return next;
+        });
+      }, 500);
+      return () => clearTimeout(timer);
     }
   }, [filteredTasks]);
 
