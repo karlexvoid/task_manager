@@ -1,46 +1,213 @@
-# Getting Started with Create React App
+# Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive task management application built with React and TypeScript. Features a beautiful UI with smooth animations, drag-and-drop functionality, and theme switching capabilities.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Task Management**
+  - Add, complete, and delete tasks
+  - Drag and drop reordering
+  - Persistent storage using localStorage
+  - Filter tasks by status (All/Pending/Completed)
 
-### `npm start`
+- **User Interface**
+  - Clean, modern design
+  - Smooth animations for adding/removing tasks
+  - Responsive layout
+  - Visual distinction between completed and incomplete tasks
+  - Hover effects and transitions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Theme Support**
+  - Light/Dark mode toggle
+  - Theme persistence across sessions
+  - Smooth theme transitions
+  - System-wide color variables
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend Framework**: React 18
+- **Language**: TypeScript
+- **Styling**: Styled Components
+- **State Management**: React Context API
+- **Drag and Drop**: react-dnd
+- **Local Storage**: Custom hook with localStorage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Installation
 
-### `npm run build`
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/task-manager.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+```bash
+cd task-manager
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the development server:
+```bash
+npm start
+```
 
-### `npm run eject`
+## 🔧 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+task-manager/
+├── src/
+│   ├── components/
+│   │   ├── TaskForm.tsx      # Task input form
+│   │   ├── TaskList.tsx      # List of tasks with drag-drop
+│   │   ├── TaskFilter.tsx    # Filter buttons
+│   │   └── ThemeToggle.tsx   # Theme switcher
+│   ├── context/
+│   │   ├── TaskContext.tsx   # Task state management
+│   │   └── ThemeContext.tsx  # Theme state management
+│   ├── styles/
+│   │   ├── GlobalStyles.ts   # Global CSS variables
+│   │   └── theme.ts          # Theme configuration
+│   ├── hooks/
+│   │   └── useLocalStorage.ts # Custom localStorage hook
+│   ├── App.tsx
+│   └── index.tsx
+├── public/
+├── package.json
+└── README.md
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Key Components
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **TaskContext**: Manages task state and operations
+  - Task CRUD operations
+  - Filtering logic
+  - Drag and drop reordering
 
-## Learn More
+- **ThemeContext**: Handles theme switching
+  - Light/Dark mode toggle
+  - Theme persistence
+  - CSS variable management
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Styling Approach
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Uses CSS variables for theming
+- Styled Components for component-specific styles
+- Smooth transitions and animations
+- Responsive design principles
+
+### State Management
+
+- React Context API for global state
+- Custom hooks for local storage
+- Memoization for performance optimization
+
+## 🎨 Design System
+
+### Colors
+
+- Primary: `#04b261` (Green)
+- Primary Hover: `#039a54`
+- Background: Light/Dark variants
+- Text: Light/Dark variants
+- Border: Light/Dark variants
+
+### Typography
+
+- System font stack for optimal performance
+- Responsive font sizes
+- Consistent spacing scale
+
+## 🔄 Features in Detail
+
+### Task Management
+
+```typescript
+interface Task {
+  id: string;
+  text: string;
+  completed: boolean;
+  createdAt: Date;
+}
+```
+
+### Drag and Drop
+
+- Implemented using react-dnd
+- Smooth animations during drag
+- Visual feedback for drag state
+
+### Theme Switching
+
+- Persists across sessions
+- Smooth transitions
+- System-wide color variables
+- Accessible color contrast
+
+## 🚀 Performance Optimizations
+
+- Memoized computations
+- Efficient state updates
+- Optimized re-renders
+- Lazy loading where applicable
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Flexible layouts
+- Adaptive spacing
+- Touch-friendly interactions
+
+## 🔒 Security
+
+- Input sanitization
+- XSS prevention
+- Secure localStorage usage
+
+## 🧪 Testing
+
+To run tests:
+```bash
+npm test
+```
+
+## 📦 Build
+
+To create a production build:
+```bash
+npm run build
+```
+
+## 🚀 Deployment
+
+### Deploying to Vercel
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com)
+3. Click "New Project"
+4. Import your GitHub repository
+5. Select the repository
+6. Click "Deploy"
+
+Vercel will automatically:
+- Detect that it's a React application
+- Install dependencies
+- Build the project
+- Deploy it to a global CDN
+
+### Environment Variables
+
+No environment variables are required for this project.
+
+### Build Settings
+
+The project is configured to work with Vercel's default build settings:
+- Build Command: `npm run build`
+- Output Directory: `build`
+- Install Command: `npm install`
+
+Made with ❤️ by Abhishek
