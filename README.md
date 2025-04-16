@@ -1,4 +1,4 @@
-# Task Manager - LimeTray Assignment Submission
+# Task Manager - 
 
 A modern, responsive task management application built with React and TypeScript. Features a beautiful UI with smooth animations, drag-and-drop functionality, and theme switching capabilities.
 
